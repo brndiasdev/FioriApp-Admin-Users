@@ -65,8 +65,8 @@ sap.ui.define(
                   resolutionResult: {
                     applicationType: "SAPUI5",
                     additionalInformation:
-                      "SAPUI5.Component=br.com.gestao.fioriappadmin303",
-                    url: sap.ui.require.toUrl("br/com/gestao/fioriappadmin303"),
+                      "SAPUI5.Component=br.com.gestao.fioriappusers303",
+                    url: sap.ui.require.toUrl("br/com/gestao/fioriappusers303"),
                   },
                 },
               },

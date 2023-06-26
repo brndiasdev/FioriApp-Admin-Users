@@ -6,8 +6,8 @@ sap.ui.define(
   function (Controller) {
     "use strict";
 
-    return Controller.extend("br.com.gestao.fioriappadmin303.controller.Objetos", {
-      onInit: function () {},
+    return Controller.extend("br.com.gestao.fioriappusers303.controller.Objetos", {
+      onInit: function () { },
 
       onClicaSet: function (event) {
         // Muda o nome do Header para o desejado

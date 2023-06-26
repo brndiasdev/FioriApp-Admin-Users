@@ -1,7 +1,7 @@
 {
   "_version": "1.49.0",
   "sap.app": {
-    "id": "br.com.gestao.fioriappadmin303",
+    "id": "br.com.gestao.fioriappusers303",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -17,7 +17,7 @@
     },
     "dataSources": {
       "mainService": {
-        "uri": "/sap/opu/odata/sap/ZSB_PRODUCAO_303/",
+        "uri": "/sap/opu/odata/sap/ZUSERS_303_SRV/",
         "type": "OData",
         "settings": {
           "annotations": ["mainService_Annotation"],
@@ -26,7 +26,7 @@
         }
       },
       "mainService_Annotation": {
-        "uri": "/destinations/S4_Hana_Novo/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZSB_PRODUCAO_303_VAN',Version='0001')/$value/",
+        "uri": "/destinations/S4_Hana_Novo/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZUSERS_303_SRV_VAN',Version='0001')/$value/",
         "type": "ODataAnnotation",
         "settings": {
           "localUri": "localService/mainService_Annotation.xml"
@@ -73,7 +73,7 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "br.com.gestao.fioriappadmin303.i18n.i18n"
+          "bundleName": "br.com.gestao.fioriappusers303.i18n.i18n"
         }
       },
       "": {
@@ -94,7 +94,7 @@
         "routerClass": "sap.m.routing.Router",
         "viewType": "XML",
         "async": true,
-        "viewPath": "br.com.gestao.fioriappadmin303.view",
+        "viewPath": "br.com.gestao.fioriappusers303.view",
         "controlAggregation": "pages",
         "controlId": "appID",
         "clearControlAggregation": false,
@@ -156,7 +156,7 @@
       }
     },
     "rootView": {
-      "viewName": "br.com.gestao.fioriappadmin303.view.App",
+      "viewName": "br.com.gestao.fioriappusers303.view.App",
       "type": "XML",
       "async": true,
       "id": "App"

@@ -9,7 +9,7 @@ sap.ui.define(
     "use strict";
 
     var oMockServer,
-      _sAppPath = "br/com/gestao/fioriappadmin303/",
+      _sAppPath = "br/com/gestao/fioriappusers303/",
       _sJsonFilesPath = _sAppPath + "localService/mockdata";
 
     var oMockServerInterface = {
@@ -91,7 +91,7 @@ sap.ui.define(
 
             // simulate request errors
             var sErrorParam =
-                oOptions.errorType || oUriParameters.get("errorType"),
+              oOptions.errorType || oUriParameters.get("errorType"),
               iErrorCode = sErrorParam === "badRequest" ? 400 : 500;
             if (sErrorParam) {
               aRequests.forEach(function (aEntry) {

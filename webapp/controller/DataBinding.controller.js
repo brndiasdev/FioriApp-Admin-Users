@@ -6,7 +6,7 @@ sap.ui.define(
   function (Controller) {
     "use strict";
 
-    return Controller.extend("br.com.gestao.fioriappadmin303.controller.DataBinding", {
+    return Controller.extend("br.com.gestao.fioriappusers303.controller.DataBinding", {
       onInit: function () {
         var objModelJson = new sap.ui.model.json.JSONModel();
         objModelJson.loadData("dados/Produtos.json");

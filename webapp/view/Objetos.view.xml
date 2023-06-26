@@ -1,5 +1,5 @@
 <mvc:View xmlns:mvc="sap.ui.core.mvc"
-  xmlns="sap.m" controllerName="br.com.gestao.fioriappadmin303.controller.i18n" displayBlock="true">
+  xmlns="sap.m" controllerName="br.com.gestao.fioriappusers303.controller.i18n" displayBlock="true">
 
   <Shell id="shell">
     <App id="app">

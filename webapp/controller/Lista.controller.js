@@ -1,7 +1,7 @@
-sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/model/Filter", "sap/ui/model/FilterOperator", "br/com/gestao/fioriappadmin303/util/Formatter", "sap/ui/core/Fragment", "sap/ui/core/ValueState", "sap/ui/model/json/JSONModel", "br/com/gestao/fioriappadmin303/util/Validator", "sap/m/MessageBox", "sap/m/BusyDialog", "sap/ui/model/odata/ODataModel", "sap/m/MessageToast"], function (BaseController, Filter, FilterOperator, Formatter, Fragment, ValueState, JSONModel, Validator, MessageBox, BusyDialog, ODataModel, MessageToast) {
+sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/model/Filter", "sap/ui/model/FilterOperator", "br/com/gestao/fioriappusers303/util/Formatter", "sap/ui/core/Fragment", "sap/ui/core/ValueState", "sap/ui/model/json/JSONModel", "br/com/gestao/fioriappusers303/util/Validator", "sap/m/MessageBox", "sap/m/BusyDialog", "sap/ui/model/odata/ODataModel", "sap/m/MessageToast"], function (BaseController, Filter, FilterOperator, Formatter, Fragment, ValueState, JSONModel, Validator, MessageBox, BusyDialog, ODataModel, MessageToast) {
   "use strict";
 
-  return BaseController.extend("br.com.gestao.fioriappadmin303.controller.Lista", {
+  return BaseController.extend("br.com.gestao.fioriappusers303.controller.Lista", {
     objFormatter: Formatter,
 
     onInit: function () {
@@ -77,7 +77,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/model/Filter", "sap/ui/mode
         this._CategoriaSearchHelp = Fragment.load({
           // Importado na função de Origem do Controller - dá load no fragment no ID do oView
           id: oView.getId(),
-          name: "br.com.gestao.fioriappadmin303.frags.SH_Categorias",
+          name: "br.com.gestao.fioriappusers303.frags.SH_Categorias",
           controller: this,
         }).then(function (oDialog) {
           oView.addDependent(oDialog); // oDialog = conteúdo do Fragment.load({oDialog})
@@ -103,7 +103,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/model/Filter", "sap/ui/mode
         this._Produto = Fragment.load({
           // Importado na função de Origem do Controller - dá load no fragment no ID do oView
           id: oView.getId(),
-          name: "br.com.gestao.fioriappadmin303.frags.Insert",
+          name: "br.com.gestao.fioriappusers303.frags.Insert",
           controller: this,
         }).then(function (oDialog) {
           oView.addDependent(oDialog); // oDialog = conteúdo do Fragment.load({oDialog})

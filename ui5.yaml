@@ -2,7 +2,7 @@
 
 specVersion: "2.6"
 metadata:
-  name: br.com.gestao.fioriappadmin303
+  name: br.com.gestao.fioriappusers303
 type: application
 server:
   customMiddleware:
@@ -29,5 +29,5 @@ server:
     - name: fiori-tools-preview
       afterMiddleware: fiori-tools-appreload
       configuration:
-        component: br.com.gestao.fioriappadmin303
+        component: br.com.gestao.fioriappusers303
         ui5Theme: sap_horizon

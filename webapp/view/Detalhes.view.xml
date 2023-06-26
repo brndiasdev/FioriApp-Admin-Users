@@ -1,7 +1,7 @@
 <mvc:View xmlns:mvc="sap.ui.core.mvc"
   xmlns="sap.uxap"
   xmlns:layout="sap.ui.layout"
-  xmlns:m="sap.m" controllerName="br.com.gestao.fioriappadmin303.controller.Detalhes" height="100%">
+  xmlns:m="sap.m" controllerName="br.com.gestao.fioriappusers303.controller.Detalhes" height="100%">
   <ObjectPageLayout id="ObjectPageLayout" showTitleInHeaderContent="true" showEditHeaderButton="true" editHeaderButtonPress="handleEditBtnPress" upperCaseAnchorBar="false">
     <headerTitle>
       <ObjectPageDynamicHeaderTitle id="DynamicHeader" class="DynamicHeader">

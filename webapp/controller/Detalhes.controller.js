@@ -1,7 +1,7 @@
-sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/core/format/NumberFormat", "br/com/gestao/fioriappadmin303/util/Formatter", "sap/ui/core/Fragment", "sap/ui/model/json/JSONModel", "sap/ui/model/odata/ODataModel", "sap/m/MessageToast", "br/com/gestao/fioriappadmin303/util/Validator", "sap/ui/core/ValueState", "sap/m/BusyDialog", "sap/m/MessageBox"], function (BaseController, NumberFormat, Formatter, Fragment, JSONModel, ODataModel, MessageToast, Validator, ValueState, BusyDialog, MessageBox) {
+sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/core/format/NumberFormat", "br/com/gestao/fioriappusers303/util/Formatter", "sap/ui/core/Fragment", "sap/ui/model/json/JSONModel", "sap/ui/model/odata/ODataModel", "sap/m/MessageToast", "br/com/gestao/fioriappusers303/util/Validator", "sap/ui/core/ValueState", "sap/m/BusyDialog", "sap/m/MessageBox"], function (BaseController, NumberFormat, Formatter, Fragment, JSONModel, ODataModel, MessageToast, Validator, ValueState, BusyDialog, MessageBox) {
   "use strict";
 
-  return BaseController.extend("br.com.gestao.fioriappadmin303.controller.Detalhes", {
+  return BaseController.extend("br.com.gestao.fioriappusers303.controller.Detalhes", {
     objFormatter: Formatter,
     //Criar o Obj Route
     onInit() {
@@ -41,7 +41,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/core/format/NumberFormat", 
       if (!oFormFragment) {
         oFormFragment = Fragment.load({
           id: oView.getId(),
-          name: "br.com.gestao.fioriappadmin303.frags." + sFragmentName,
+          name: "br.com.gestao.fioriappusers303.frags." + sFragmentName,
           controller: this,
         });
         this._formFragments[sFragmentName] = oFormFragment;
@@ -185,7 +185,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/core/format/NumberFormat", 
         this._CategoriaSearchHelp = Fragment.load({
           // Importado na função de Origem do Controller - dá load no fragment no ID do oView
           id: oView.getId(),
-          name: "br.com.gestao.fioriappadmin303.frags.SH_Categorias",
+          name: "br.com.gestao.fioriappusers303.frags.SH_Categorias",
           controller: this,
         }).then(function (oDialog) {
           oView.addDependent(oDialog); // oDialog = conteúdo do Fragment.load({oDialog})
