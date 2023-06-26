@@ -1,0 +1,58 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m" controllerName="br.com.gestao.fioriappreport303.controller.Validation" displayBlock="true">
+  <App id="appID12">
+    <pages>
+      <Page xmlns="sap.m" id="pageI13d" title="Page Title" floatingFooter="true">
+        <headerContent>
+          <Button icon="sap-icon://action" tooltip="Share" id="button0" />
+
+        </headerContent>
+        <content>
+          <sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" minWidth="1024" maxContainerCols="2" editable="true" layout="ResponsiveGridLayout" labelSpanL="4" labelSpanM="4" emptySpanL="1" emptySpanM="1" columnsL="2" columnsM="2" id="form120">
+            <sap.ui.layout.form:content>
+
+              <!-- Validação de Texto -->
+              <Label text="Validacao Texto" width="100%" id="label10" />
+              <Input xmlns="sap.m" valueStateText="Digite Apenas Palavras, entre 3 a 50 caracteres" value="{path: 'MDL_Produto>/Name', type: 'sap.ui.model.type.String', constraints: {search: '^[A-Za-z ]+$', minLength: 3, maxLength: 50}}" id="input0" />
+
+              <!-- Validação Númerica -->
+              <Label text="Validacao Numero" width="100%" id="label11" />
+              <Input xmlns="sap.m" type="Number" valueStateText="Digite Apenas Números, entre 3 a 10" value="{path: 'MDL_Produto>/Numero', type: 'sap.ui.model.type.String', constraints: {search: '^[0-9]*$', minLength: 3, maxLength: 10}}" id="input2" />
+
+              <!-- Validação de Data -->
+              <Label text="Validacao Data" width="100%" id="label12" />
+              <DatePicker xmlns="sap.m" valueStateText="Data Mínima: 01/01/2023" value="{path: 'MDL_Produto>/CreatedAt', type: 'sap.ui.model.type.Date', formatOptions:{
+                source: {
+                  pattern: 'dd/MM/yyyy'
+                },
+                pattern: 'dd/MM/yyyy'
+              }, constraints: {minimum: '01/01/2023'}}" id="dPicker0" />
+
+              <!-- Validação de Moeda -->
+              <Label text="Validacao Moeda" width="100%" id="label13" />
+              <Input xmlns="sap.m" valueStateText="Insira um Valor" value="{path: 'MDL_Produto>/Price', type: 'sap.ui.model.type.Currency', constraints: {minimum: 5, maximum: 10000}}" id="input3" />
+              <Label text="Validação de Moeda com 5 casas decimais" width="100%" id="labelValidation12"></Label>
+              <Text id="_IDGenText1" text="{path: 'MDL_Produto>/PriceFloat', type: 'sap.ui.model.type.Currency', formatOptions: { minFractionDigits: 5}}" />
+
+              <!-- Validação Float -->
+              <Label text="Validacao Float" width="100%" id="label14" />
+              <Input xmlns="sap.m" valueStateText="Insira um Valor" value="{path: 'MDL_Produto>/Largura', type: 'sap.ui.model.type.Float', 
+                formatOptions: { maxFractionDigits: 2, 
+                  minFractionDigits: 2}, 
+                constraints: {minimum: 5, 
+                  maximum: 100}}" id="input5" />
+            </sap.ui.layout.form:content>
+          </sap.ui.layout.form:SimpleForm>
+        </content>
+        <footer>
+          <OverflowToolbar id="toolbar1">
+            <ToolbarSpacer id="_IDGenToolbarSpacer1" />
+            <Button id="_IDGenButton1" type="Accept" text="Accept" press="verModel" />
+          </OverflowToolbar>
+
+        </footer>
+      </Page>
+    </pages>
+  </App>
+</mvc:View>

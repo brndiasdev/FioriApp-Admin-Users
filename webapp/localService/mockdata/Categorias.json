@@ -1,0 +1,50 @@
+[
+  {
+    "Category": "Virtual Reality",
+    "Description": "VR Gear",
+    "__metadata": {
+      "uri": "/Categorias('ElectroGear')",
+      "type": "cds_zsd_producao_303.CategoriasType"
+    }
+  },
+  {
+    "Category": "Headphones",
+    "Description": "Connectivity",
+    "__metadata": {
+      "uri": "/Categorias('CyberConnect')",
+      "type": "cds_zsd_producao_303.CategoriasType"
+    }
+  },
+  {
+    "Category": "Smart Home",
+    "Description": "Innovative",
+    "__metadata": {
+      "uri": "/Categorias('TechWizards')",
+      "type": "cds_zsd_producao_303.CategoriasType"
+    }
+  },
+  {
+    "Category": "Laptops",
+    "Description": "High-speed Solutions",
+    "__metadata": {
+      "uri": "/Categorias('ByteBlast')",
+      "type": "cds_zsd_producao_303.CategoriasType"
+    }
+  },
+  {
+    "Category": "Gaming Accessories",
+    "Description": "Tech Inovations",
+    "__metadata": {
+      "uri": "/Categorias('FutureTech')",
+      "type": "cds_zsd_producao_303.CategoriasType"
+    }
+  },
+  {
+    "Category": "GizmoGalaxy",
+    "Description": "Gadgets",
+    "__metadata": {
+      "uri": "/Categorias('GizmoGalaxy')",
+      "type": "cds_zsd_producao_303.CategoriasType"
+    }
+  }
+]

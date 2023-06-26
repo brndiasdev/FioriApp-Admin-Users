@@ -1,0 +1,139 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.uxap"
+  xmlns:layout="sap.ui.layout"
+  xmlns:m="sap.m" controllerName="br.com.gestao.fioriappadmin303.controller.Detalhes" height="100%">
+  <ObjectPageLayout id="ObjectPageLayout" showTitleInHeaderContent="true" showEditHeaderButton="true" editHeaderButtonPress="handleEditBtnPress" upperCaseAnchorBar="false">
+    <headerTitle>
+      <ObjectPageDynamicHeaderTitle id="DynamicHeader" class="DynamicHeader">
+        <breadcrumbs>
+          <m:Breadcrumbs id="breadcrumbs1" class="breadcrumbs1" currentLocationText="{Name} - {Productid}">
+            <m:Link id="bcLink1" text="Produtos" class="bcLink1" press=".onNavBack" />
+          </m:Breadcrumbs>
+        </breadcrumbs>
+
+
+        <expandedHeading>
+          <m:HBox id="hBox1">
+            <m:Title id="title0" text="{Name}" wrapping="true" />
+            <m:ObjectMarker id="_IDGenObjectMarker1" type="Favorite" class="sapUiTinyMarginBegin" />
+          </m:HBox>
+        </expandedHeading>
+
+        <snappedHeading>
+          <m:FlexBox id="flexsnapped" fitContainer="true" class="flexsnapped">
+            <m:items>
+              <sap.ui.core:Icon xmlns:sap.ui.core="sap.ui.core" src="sap-icon://product" size="3em" class="sapUiSmallMarginBeginEnd icon1" id="icon1" />
+              <m:Title id="_IDGenTitle2" text="{Name}" class="titlesnapped" wrapping="true" />
+            </m:items>
+          </m:FlexBox>
+        </snappedHeading>
+
+        <expandedContent>
+          <m:Text id="_IDGenText1" text="{Description}" />
+        </expandedContent>
+
+        <actions>
+          <m:Button id="actionButton" text="{i18n>backButton}" type="Emphasized" press=".onNavBack" icon="sap-icon://nav-back" />
+          <m:Button id="editButton" text="{i18n>editButton}" type="Emphasized" press="handleEdit" icon="sap-icon://edit" />
+          <m:Button id="deleteButton" text="{i18n>deleteButton}" type="Emphasized" press="handleDelete" icon="sap-icon://delete" />
+          <m:Button id="saveButton" text="{i18n>saveButton}" type="Emphasized" press="handleSave" icon="sap-icon://save" />
+          <m:Button id="cancelButton" text="{i18n>cancelButton}" type="Emphasized" press="handleCancel" icon="sap-icon://decline" />
+        </actions>
+      </ObjectPageDynamicHeaderTitle>
+    </headerTitle>
+
+    <headerContent>
+
+      <m:HeaderContainer id="headerContainer" class="headerContainer" scrollStep="200" showDividers="false">
+        <m:HBox id="hcHBox0">
+          <sap.ui.core:Icon xmlns:sap.ui.core="sap.ui.core" src="sap-icon://product" size="3.5em" id="icon2" class="icon2" />
+          <m:VBox id="hcVBox0" class="sapSmallMarginEnd">
+            <m:Title id="hcTitle0" class="hcTitle0 sapUiSmallMarginEnd" text="{Productid}" />
+            <m:Link id="hcLink0" class="hcLink0 sapUiSmallMarginEnd" text="{i18n>headerCategory}" />
+            <m:HBox id="hcHBox1" renderType="Bare">
+              <m:Label id="hcLabel0" text="{i18n>headerGrupo}" class="hcLabel0" />
+              <m:Text id="hcText0" class="hcText0 sapUiLargeMarginEnd" text=" {Category}" />
+            </m:HBox>
+          </m:VBox>
+        </m:HBox>
+
+        <m:VBox id="hcVBox1">
+          <m:Title id="hcTitle1" text="{i18n>headerDescription}" class="hcTitle1 sapUiLargeMarginEnd" />
+          <m:Text id="hcText1" class="hcText1 sapUiLargeMarginEnd" text="{Description}" width="320px" />
+        </m:VBox>
+
+        <m:VBox id="hcVBox2">
+          <m:Title id="hcTitle2" class="hcTitle2" text="{i18n>headerStatus}" />
+          <m:ObjectStatus text="{path:'Status', formatter:'.objFormatter.statusProduto' }" id="hcStatus0" icon="{path:'Status', formatter:'.objFormatter.iconeProduto'}" inverted="true" state="{path:'Status', formatter:'.objFormatter.stateProduto'}" />
+        </m:VBox>
+
+        <m:VBox id="hcVBox3">
+          <m:Title id="hcTitle3" class="hcTitle3 sapUiLargeMarginBegin" text="{i18n>headerPrice}" />
+          <m:ObjectNumber number="{ parts: [{path:'Price'}, {path:'Currencycode'}], type:'sap.ui.model.type.Currency', formatOptions: {showMeasure: false}}" unit="{Currencycode}" id="hcPrice" state="Success" class="hcPrice sapUiLargeMarginBegin" />
+        </m:VBox>
+
+        <m:VBox id="hcVBox4" class="hcVBox4 sapUiLargeMarginBegin">
+          <m:HBox id="VHBox0" class="VHBox0">
+            <m:Label id="hcLabel1" text="{i18n>headerCreatedBy}" class="hcLabel1" />
+            <m:Link id="hcLink1" text="{Usercreate}" class="hcLink1 sapUiMediumMarginBegin" />
+          </m:HBox>
+          <m:HBox id="VHBox1" class="VHBox1">
+            <m:Label id="hcLabel2" text="{i18n>headerCreatedOn}" class="hcLabel2" />
+            <m:Link id="hcLink2" text="{path:'Createdat', formatter:'.objFormatter.date' }" class="hcLink2 sapUiMediumMarginBegin" />
+          </m:HBox>
+          <m:HBox id="VHBox2" class="VHBox2">
+            <m:Label id="hcLabel3" text="{i18n>headerChangedBy}" class="hcLabel3" />
+            <m:Link id="hcLink3" text="{Userupdate}" class="hcLink3 sapUiSmallMarginBegin" />
+          </m:HBox>
+          <m:HBox id="VHBox3" class="VHBox3">
+            <m:Label id="hcLabel4" text="{i18n>headerChangedOn}" class="hcLabel4" />
+            <m:Link id="hcLink4" text="{path:'Changedat', formatter:'.objFormatter.date' }" class="hcLink4 sapUiSmallMarginBegin" />
+          </m:HBox>
+        </m:VBox>
+      </m:HeaderContainer>
+
+    </headerContent>
+    <!-- FIM DO HEADER -->
+
+    <!-- SECTIONS -->
+    <sections>
+      <ObjectPageSection titleUppercase="false" id="objPage0" title="{i18n>sectionTitle}" importance="Medium">
+        <subSections>
+          <ObjectPageSubSection id="sectionsTitle1" title="">
+            <blocks>
+              <m:VBox id="vboxBasicInfo">
+
+              </m:VBox>
+            </blocks>
+          </ObjectPageSubSection>
+        </subSections>
+      </ObjectPageSection>
+
+      <ObjectPageSection titleUppercase="false" id="objPage1" title="{i18n>sectionTitle1}" importance="Medium">
+        <subSections>
+          <ObjectPageSubSection id="employmentSectionSS1" titleUppercase="false">
+            <blocks>
+              <m:VBox id="vboxTechInfo">
+
+              </m:VBox>
+            </blocks>
+          </ObjectPageSubSection>
+        </subSections>
+      </ObjectPageSection>
+      <ObjectPageSection titleUppercase="false" visible="false" id="objPage2" title="{i18n>sectionUpdateProduct}">
+        <subSections>
+          <ObjectPageSubSection id="employmentSectionSS2" titleUppercase="false">
+            <blocks>
+              <m:VBox id="vboxChangeProduct">
+
+              </m:VBox>
+            </blocks>
+          </ObjectPageSubSection>
+        </subSections>
+      </ObjectPageSection>
+    </sections>
+    <footer>
+
+    </footer>
+  </ObjectPageLayout>
+</mvc:View>

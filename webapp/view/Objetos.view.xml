@@ -1,0 +1,67 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m" controllerName="br.com.gestao.fioriappadmin303.controller.i18n" displayBlock="true">
+
+  <Shell id="shell">
+    <App id="app">
+      <pages>
+        <Page id="page" title="Fiori Project1">
+          <content>
+            <Panel xmlns="sap.m" width="auto" expandable="true" expanded="true" id="panel0">
+            
+              <headerToolbar>
+                <Toolbar id="toolbar1">
+                  <Title text="Header" id="HeaderTitle" />
+                  <Button id="_IDGenButton1" icon="sap-icon://settings" />
+                  <content>
+                    <ToolbarSpacer id="_IDGenToolbarSpacer1" />
+                  </content>
+                </Toolbar>
+
+              </headerToolbar>
+              <content>
+                <List noDataText="Drop list items here" id="list1">
+                  <items>
+                    <StandardListItem type="Navigation" title="List Item 1" description="Description text" icon="sap-icon://picture" id="item1" />
+                    <StandardListItem type="Navigation" title="List Item 2" description="Description text" icon="sap-icon://picture" id="item2" />
+                  </items>
+                </List>
+                <Button xmlns="sap.m" text="novo Nome" press="onClicaSet" id="button2" width="50%" />
+                <Button xmlns="sap.m" text="Nome Atual" press="onClicaView" id="button0" width="50%" />
+              </content>
+            </Panel>
+            <Panel xmlns="sap.m" width="auto" expandable="true" expanded="true" id="panel2">
+              <headerToolbar>
+                <Toolbar id="toolbar1_1684200056685">
+                  <Title id="_IDGenTitle1" text="Header" />
+                  <ToolbarSpacer id="_IDGenToolbarSpacer2" />
+                  <Button id="_IDGenButton2" icon="sap-icon://settings" />
+                </Toolbar>
+
+              </headerToolbar>
+              <content>
+                <Text text="Panel Content" id="text2" />
+                <sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form"
+                  xmlns:sap.ui.core="sap.ui.core" editable="true" layout="ResponsiveGridLayout" id="form0">
+                  <sap.ui.layout.form:content>
+                    <sap.ui.core:Title text="Title" id="title1" />
+                    <Label text="Label 1" id="label0" />
+                    <Input width="100%" id="input0" />
+                    <Input width="100%" id="input1" />
+                    <Label text="Label 2" id="label1" />
+                    <Input width="100%" id="input2" />
+                  </sap.ui.layout.form:content>
+                </sap.ui.layout.form:SimpleForm>
+              </content>
+            </Panel>
+            <FlexBox id="_IDGenFlexBox1" justifyContent="Center">
+              <Button xmlns="sap.m" text="addForm" press="addForm" id="button4" />
+              <items>
+                <Button xmlns="sap.m" text="removeForm" press="removeForm" id="button1" width="100%" />
+              </items>
+            </FlexBox>
+          </content>
+        </Page>
+      </pages>
+    </App>
+  </Shell>
+</mvc:View>

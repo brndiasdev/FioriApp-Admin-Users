@@ -1,0 +1,44 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m" controllerName="br.com.gestao.fioriappadmin303.controller.i18n" displayBlock="true">
+
+  <Shell id="shell">
+    <App id="app">
+      <pages>
+        <Page id="page" title="{i18n>title}">
+          <content>
+
+            <sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form"
+              xmlns:sap.ui.core="sap.ui.core" editable="true" layout="ResponsiveGridLayout" id="form0">
+
+              <sap.ui.layout.form:content>
+
+                <sap.ui.core:Title text="{i18n>titleCliente}" id="title0" />
+
+                <Label text="{i18n>labelCliente}" id="label0" />
+
+                <Input width="100%" id="cliente" placeholder="{i18n>placeholderCliente}" />
+
+                <Label text="{i18n>labelEnderecoCliente}" id="label1" />
+
+                <Input width="100%" id="endereco" placeholder="{i18n>placeholderEnderecoCliente}" />
+
+                <Label text="{i18n>labelCidadeCliente}" width="100%" id="label2" />
+
+                <Input xmlns="sap.m" id="cidade" placeholder="{i18n>placeholdCidadeCliente}" />
+
+                <Label text="{i18n>labelEstadoCliente}" width="100%" id="label3" />
+
+                <Input xmlns="sap.m" id="estado" placeholder="{i18n>placeholderEstadoCliente}" />
+
+                <Button xmlns="sap.m" text="{i18n>buttonEnviar}" press="sendInfo" id="button0" />
+
+              </sap.ui.layout.form:content>
+
+            </sap.ui.layout.form:SimpleForm>
+
+          </content>
+        </Page>
+      </pages>
+    </App>
+  </Shell>
+</mvc:View>

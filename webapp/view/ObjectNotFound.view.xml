@@ -1,0 +1,43 @@
+<mvc:View xmlns:m="sap.m"
+  xmlns:core="sap.ui.core"
+  xmlns:mvc="sap.ui.core.mvc" height="100%">
+  <m:Page id="_IDGenPage1" showHeader="false" enableScrolling="false">
+    <m:HeaderContainer id="header0" class="header0"> 
+      <m:Text xmlns="sap.m" text="{i18n>objNotFoundTitle}" class="text0" width="100%" id="text0">
+        <layoutData>
+          <FlexItemData id="1" growFactor="0.1"/>
+        </layoutData>
+      </m:Text>
+    </m:HeaderContainer>
+    <m:content>
+      <m:FlexBox id="_IDGenFlexBox1" justifyContent="Center" height="100%" alignItems="Center" direction="Column">
+        <m:items>
+
+          <core:Icon src="sap-icon://error" size="4em" class="icon0" id="icon0"/>
+
+          <Text xmlns="sap.m" class="text1" text="{i18n>objNotFoundText}" id="text1">
+            <layoutData>
+              <FlexItemData id="2" growFactor="0.1"/>
+            </layoutData>
+          </Text>
+        </m:items>
+
+
+
+        <m:items>
+        </m:items>
+        <m:items>
+          <Text xmlns="sap.m" class="text2" text="{i18n>objNotFoundDescription}" id="text2">
+            <layoutData>
+              <FlexItemData id="3" growFactor="0.1"/>
+            </layoutData>
+          </Text>
+        </m:items>
+        <m:Button id="button0" class="button0" text="{i18n>objNotFoundButton}" press="history.back()"/>
+
+      </m:FlexBox>
+
+
+    </m:content>
+  </m:Page>
+</mvc:View>

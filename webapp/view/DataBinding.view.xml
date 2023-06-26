@@ -1,0 +1,81 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m" controllerName="br.com.gestao.fioriappadmin303.controller.DataBinding" displayBlock="true">
+
+  <Shell id="shell">
+    <App id="app">
+      <pages>
+        <Page id="page" title="Fiori Project1">
+          <content>
+            <Panel xmlns="sap.m" width="auto" expandable="true" expanded="true" id="panel0">
+              <headerToolbar>
+                <Toolbar id="toolbar1">
+                  <Title text="Model By OData" id="headerModelOdata" />
+                  <content>
+                    <ToolbarSpacer id="_IDGenToolbarSpacer1" />
+                  </content>
+                </Toolbar>
+
+              </headerToolbar>
+              <content>
+                <List noDataText="Drop list items here" id="list1" items="{/Produtos}">
+                  <items>
+                    <StandardListItem type="Navigation" title="{Productid}" description="{Name}" icon="sap-icon://picture" id="item1" />
+                  </items>
+                </List>
+              </content>
+            </Panel>
+            <Panel xmlns="sap.m" width="auto" expandable="true" expanded="true" id="panel0_1684352958245">
+              <headerToolbar>
+                <Toolbar id="toolbar1_1684352958245">
+                  <Title text="Model By JSON" id="headerModelJson" />
+                  <ToolbarSpacer id="toolbarSpacer1" />
+                  <Button id="toolbarButton1" icon="sap-icon://settings" />
+                </Toolbar>
+              </headerToolbar>
+
+              <content>
+                <List noDataText="Drop list items here" id="list0" items="{Model_JSON_Produtos>/Products}">
+                  <items>
+                    <StandardListItem type="Navigation" title="{Model_JSON_Produtos>ProductName}" description="{Model_JSON_Produtos>Description}" icon="sap-icon://picture" id="item0" />
+
+                  </items>
+                </List>
+              </content>
+
+            </Panel>
+            <Panel xmlns="sap.m" width="auto" expandable="true" expanded="true" id="panel0_1684364780841">
+              <headerToolbar>
+                <Toolbar id="toolbar1_1684364780841">
+                  <Title id="_IDGenTitle1" text="Header" />
+                  <ToolbarSpacer id="_IDGenToolbarSpacer2" />
+                  <Button id="_IDGenButton1" icon="sap-icon://settings" />
+                </Toolbar>
+              </headerToolbar>
+
+              <content>
+                <sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form"
+                  xmlns:sap.ui.core="sap.ui.core" editable="true" layout="ResponsiveGridLayout" id="formRegions">
+                  <sap.ui.layout.form:content>
+                    <sap.ui.core:Title text="Binding Element" id="title1" />
+
+                    <Label text="Nome da Empresa" id="label3" />
+                    <Input width="100%" placeholder="Nome da Empresa" id="input1" value="{Model_JSON_Regions>companies/0/name}" />
+
+                    <Label text="Nome da Região" id="label0" />
+                    <Input width="100%" placeholder="Nome da Região" id="input0" value="{Model_JSON_Regions>name}" />
+
+                    <Label text="Cidade / País" id="label1" />
+                    <Input width="100%" placeholder="Cidade / País" id="input2" value="{Model_JSON_Regions>companies/0/city} - {Model_JSON_Regions>companies/0/country}" />
+
+                    <Label text="Acessar Regiões" width="100%" id="label2" />
+                    <Button xmlns="sap.m" text="Binding Regions Elements" press="getRegion" id="button1" icon="sap-icon://sys-add" />
+                  </sap.ui.layout.form:content>
+                </sap.ui.layout.form:SimpleForm>
+              </content>
+            </Panel>
+          </content>
+        </Page>
+      </pages>
+    </App>
+  </Shell>
+</mvc:View>

@@ -1,0 +1,35 @@
+<core:FragmentDefinition xmlns:m="sap.m"
+  xmlns:core="sap.ui.core"
+  xmlns:forms="sap.ui.layout.form"
+  xmlns:l="sap.ui.layout">
+
+  <m:VBox id="techFragVBox" class="sapUiSmallMargin">
+    <sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" backgroundDesign="Transparent"
+      xmlns:sap.ui.core="sap.ui.core" id="form1" editable="false" layout="ColumnLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsM="2" columnsL="3" columnsXL="4" singleContainerFullSize="false">
+
+      <sap.ui.layout.form:content >
+        <m:Label text="{i18n>sectionMeasureUnit}" id="sectionLabel2" />
+        <m:Text id="sectionText2" text="{Measureunit}" class="sapMObjectNumberMedium" />
+
+        <m:Label text="{i18n>sectionWeightMeasure}" id="sectionLabel3" />
+        <m:Text id="sectionText3" text="{path: 'Weightmeasure', formatter: '.objFormatter.floatNumber'} {path: 'Weightunit'}" />
+
+        <m:Label text="{i18n>sectionWidth}" id="sectionLabel5" />
+        <m:Text id="sectionText5" text="{path: 'Width', formatter:'.objFormatter.floatNumber'}" />
+
+        <m:Label text="{i18n>sectionDepth}" id="sectionLabel6" />
+        <m:Text id="sectionText6" text="{path: 'Depth', formatter:'.objFormatter.floatNumber'}" />
+
+        <m:Label text="{i18n>sectionHeight}" id="sectionLabel7" />
+        <m:Text id="sectionText7" text="{path: 'Height', formatter:'.objFormatter.floatNumber'}" />
+
+        <m:Label text="{i18n>sectionDimUnit}" id="sectionLabel8" />
+        <m:Text id="sectionText8" text="{Dimunit}" />
+      </sap.ui.layout.form:content>
+
+    </sap.ui.layout.form:SimpleForm>
+
+
+  </m:VBox>
+
+</core:FragmentDefinition>

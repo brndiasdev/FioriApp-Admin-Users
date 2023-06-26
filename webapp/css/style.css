@@ -1,0 +1,108 @@
+.header0 {
+  display: flex;
+  background-color: white;
+  justify-content: center;
+}
+
+.text0 {
+  display: flex;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.indicator0 {
+  margin-bottom: 30px;
+}
+
+.text1 {
+  font-size: 24px;
+}
+
+.text2 {
+  font-size: 24px;
+}
+
+.button0 {
+  width: 200px; /* Set the desired width */
+  height: 500px; /* Set the desired height */
+}
+
+.icon0 {
+  margin-bottom: 45px;
+}
+
+.DynamicHeader {
+  display: flex;
+  justify-content: center;
+}
+
+.flexsnapped {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.icon2 {
+  align-items: center;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+/* .headerContainer  {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0, 100px, 0, 100px;
+} */
+
+/* .hcVBox1,
+.hcVBox2,
+.hcVBox3,
+.hcVBox4 {
+  flex: 1;
+}
+
+.hcVBox1,
+.hcVBox2,
+.hcVBox3 {
+  max-width: 320px;
+  padding: 0 10px;
+} */
+
+/* .hcVBox4 {
+  flex-basis: 100%;
+}
+
+.hcTitle1,
+.hcTitle2,
+.hcTitle3,
+.hcTitle0 {
+  text-align:justify;
+}
+
+.VHBox0,
+.VHBox1,
+.VHBox2,
+.VHBox3 {
+  flex-basis: 100%;
+}
+
+.hcLabel1,
+.hcLabel2,
+.hcLabel3,
+.hcLabel4 { */
+/* flex: 1;
+  text-align: right;
+  padding-right: 10px;
+}
+
+.hcLink1,
+.hcLink2,
+.hcLink3,
+.hcLink4 {
+  flex: 1; */
+/* } */
