@@ -20,16 +20,16 @@
                 <FlexBox xmlns="sap.m" id="_IDGenFlexBox1" width="100%" justifyContent="SpaceBetween">
                   <VBox id="_IDGenVBox1">
                     <Label text="{i18n>searchID}" textAlign="Center" width="100%" id="label1_1684435890712"/>
-                    <SearchField placeholder="{i18n>searchIDplaceholder}" tooltip="Search" search="onSearchName" id="field0" width="325px"/>
+                    <SearchField placeholder="{i18n>searchIDplaceholder}" tooltip="Search" search="onSearchName" id="field0" class="sapUiLargeMarginBegin"/>
                   </VBox>
                   <VBox id="_IDGenVBox2">
                     <Label text="{i18n>searchName}" textAlign="Center" width="100%" id="label2_1684435907058"/>
-                    <SearchField placeholder="{i18n>searchNameplaceholder}" tooltip="Search" search="onSearchName" id="field1" width="325px"/>
+                    <SearchField placeholder="{i18n>searchNameplaceholder}" tooltip="Search" search="onSearchName" id="field1" class="sapUiLargeMarginBeginEnd"/>
                   </VBox>
                   <VBox id="_IDGenVBox3">
                     <Label text="{i18n>searchEmail}" textAlign="Center" width="100%" id="label3_1684435907058"/>
                     <HBox id="_IDGenHBox1">
-                      <Input id="field2" placeholder="{i18n>searchEmailPlaceHolder}" showValueHelp="true" width="325px" valueHelpOnly="true" valueHelpRequest="onCategoria"/>
+                      <Input id="field2" placeholder="{i18n>searchEmailPlaceHolder}" class="sapUiLargeMarginEnd"/>
                       <Button id="hBoxButton0" text="{i18n>buttonClearEmail}" tooltip="Clear Filter" press="clearFilter"/>
                       <Button id="hBoxButton1" text="" icon="sap-icon://search" press="onSearchName" />
                     </HBox>
@@ -40,7 +40,7 @@
 
               <titleMainAction/>
               <titleCustomTextActions>
-                <m:Button id="headerButton" text="{i18n>btnAdd}" icon="sap-icon://add" press="onNovoProduto"/>
+                <m:Button id="headerButton" text="{i18n>btnAdd}" icon="sap-icon://add" press="onNovoUsuario"/>
               </titleCustomTextActions>
               <titleCustomIconActions/>
               <footerCustomActions/>

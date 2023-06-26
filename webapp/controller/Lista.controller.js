@@ -14,23 +14,29 @@ sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/model/Filter", "sap/ui/mode
       });
       // Força a inicialização com dados em PT-BR
       // var oConfiguration = sap.ui.getCore().getConfiguration();
-      // oConfiguration.setLanguage(navigator.language);
+      // oConfiguration.setLanguage("de-CH");
     },
 
     criarModel: function () {
       // Model Produto
       var oModel = new JSONModel();
-      this.getView().setModel(oModel, "MDL_Produto");
+      this.getView().setModel(oModel, "MDL_Usuario");
     },
     onSearchName: function () {
       var idQuery = this.getView().byId("field0"); // Linka a variável idQuery ao elemento de ID field0
       var nameQuery = this.getView().byId("field1"); // Linka a variável nameQuery ao elemento de ID field1
-      var categoryQuery = this.getView().byId("field2");
+      var emailQuery = this.getView().byId("field2");
 
       var objFilter = { filters: [], and: true };
-      objFilter.filters.push(new Filter("Productid", FilterOperator.Contains, idQuery.getValue()));
-      objFilter.filters.push(new Filter("Name", FilterOperator.Contains, nameQuery.getValue()));
-      objFilter.filters.push(new Filter("Category", FilterOperator.Contains, categoryQuery.getValue()));
+      if (idQuery.getValue()) {
+        objFilter.filters.push(new Filter("Userid", FilterOperator.Contains, idQuery.getValue()));
+      }
+      if (nameQuery.getValue()) {
+        objFilter.filters.push(new Filter("Firstname", FilterOperator.Contains, nameQuery.getValue()));
+      }
+      if (emailQuery.getValue()) {
+        objFilter.filters.push(new Filter("Email", FilterOperator.Contains, emailQuery.getValue()));
+      }
 
       var oFilter = new Filter(objFilter);
 
@@ -60,12 +66,12 @@ sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/model/Filter", "sap/ui/mode
       // Button dentro da view LISTA que faz o routing para a view Detalhes
 
       // Passo 1 - Captura do Valor do Produto
-      var oProductId = event.getSource().getBindingContext().getProperty("Productid"); // event.oQueFoiClicado.EmQualLinha.PropriedadeCorrespondenteNoMetadata / getObject().Projectid
+      var oUserid = event.getSource().getBindingContext().getProperty("Userid"); // event.oQueFoiClicado.EmQualLinha.PropriedadeCorrespondenteNoMetadata / getObject().Projectid
       // var oProductId = event.getSource().getBindingContext("Nome do Model (models>manifest.json)").getProperty("Productid");
 
       //Passo 2 - Envio para o Route de Detalhes com Parametro
       var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-      oRouter.navTo("Detalhes", { Productid: oProductId });
+      oRouter.navTo("Detalhes", { Userid: oUserid });
     },
 
     onCategoria: function (oEvent) {
@@ -92,15 +98,15 @@ sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/model/Filter", "sap/ui/mode
         oDialog.open();
       });
     },
-    onNovoProduto: function (oEvent) {
+    onNovoUsuario: function (oEvent) {
       //Criar o Model Produto
       var t = this;
       t.criarModel();
       var oView = this.getView();
 
-      if (!this._Produto) {
+      if (!this._Usuario) {
         // se this._CategoriaSearchHelp não existe...
-        this._Produto = Fragment.load({
+        this._Usuario = Fragment.load({
           // Importado na função de Origem do Controller - dá load no fragment no ID do oView
           id: oView.getId(),
           name: "br.com.gestao.fioriappusers303.frags.Insert",
@@ -111,7 +117,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/model/Filter", "sap/ui/mode
         });
       }
 
-      this._Produto.then(function (oDialog) {
+      this._Usuario.then(function (oDialog) {
         // Abre o Fragment
         oDialog.open();
 
@@ -240,20 +246,21 @@ sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/model/Filter", "sap/ui/mode
       }
     },
     onInsert: function () {
+      debugger;
       // 1 - Cria uma referência do objeto Model que está recebendo as informações do fragment
-      var oModel = this.getView().getModel("MDL_Produto").getData();
+      var oModel = this.getView().getModel("MDL_Usuario").getData();
       // var objNovo = oModel.getData();
 
       // 2 - Manipular Propriedades
-      oModel.Productid = this.geraID();
-      oModel.Price = oModel.Price[0].toString();
-      oModel.Weightmeasure = oModel.Weightmeasure.toString();
-      oModel.Width = oModel.Width.toString();
-      oModel.Depth = oModel.Depth.toString();
-      oModel.Height = oModel.Height.toString();
-      oModel.Createdat = this.objFormatter.dateSAP(oModel.Createdat);
-      oModel.Currencycode = "BRL";
-      oModel.Userupdate = "";
+      // oModel.Productid = this.geraID();
+      // oModel.Price = oModel.Price[0].toString();
+      // oModel.Weightmeasure = oModel.Weightmeasure.toString();
+      // oModel.Width = oModel.Width.toString();
+      // oModel.Depth = oModel.Depth.toString();
+      // oModel.Height = oModel.Height.toString();
+      // oModel.Createdat = this.objFormatter.dateSAP(oModel.Createdat);
+      // oModel.Currencycode = "BRL";
+      // oModel.Userupdate = "";
 
       // 3 - Criando referências do Arquivo i18n
       var bundle = this.getView().getModel("i18n").getResourceBundle();
@@ -265,8 +272,8 @@ sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/model/Filter", "sap/ui/mode
         bundle.getText("insertDialogMessage"), // Pergunta do Processo dentro do i18n
         function (action) {
           //função de disparo do insert
-          debugger;
           if (MessageBox.Action.OK === action) {
+            debugger;
             // Verifica se o usuário confirmou a operação
             t._oBusyDialog = new BusyDialog({
               text: bundle.getText("Sending"),
@@ -276,14 +283,14 @@ sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/model/Filter", "sap/ui/mode
               //Realizar a chamada para o SAP
               var oModelSend = new ODataModel(oModelProduto.sServiceUrl, true);
               oModelSend.create(
-                "Produtos",
+                "UsersSet",
                 oModel,
                 null,
                 function (d, r) {
                   // Função de Sucesso
                   if (r.statusCode === 201) {
                     // 201 = sucesso na criação
-                    MessageToast.show(bundle.getText("insertDialogSuccess", [oModel.Productid]), {
+                    MessageToast.show(bundle.getText("insertDialogSuccess", [oModel.Userid]), {
                       duration: 5000,
                     });
                     t.closeDialog(); // Fecha o Dialog
@@ -318,7 +325,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/model/Filter", "sap/ui/mode
     },
     // Fechamento do Dialog
     closeDialog: function () {
-      this._Produto.then(function (oDialog) {
+      this._Usuario.then(function (oDialog) {
         oDialog.close();
       });
     },

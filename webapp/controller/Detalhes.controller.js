@@ -51,7 +51,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/core/format/NumberFormat", 
 
     onBindingProdutoDetalhes: function (oEvent) {
       // Capturando o parametro trafegado no Route Detalhes - ProductID
-      var oProduto = oEvent.getParameter("arguments").Productid;
+      var oProduto = oEvent.getParameter("arguments").Userid;
 
       // Crie um Objeto referente a View Detalhes
       var oView = this.getView();

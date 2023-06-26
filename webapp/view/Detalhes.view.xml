@@ -6,7 +6,7 @@
     <headerTitle>
       <ObjectPageDynamicHeaderTitle id="DynamicHeader" class="DynamicHeader">
         <breadcrumbs>
-          <m:Breadcrumbs id="breadcrumbs1" class="breadcrumbs1" currentLocationText="{Name} - {Productid}">
+          <m:Breadcrumbs id="breadcrumbs1" class="breadcrumbs1" currentLocationText="{Userid} - {Firstname} - {Lastname}">
             <m:Link id="bcLink1" text="Produtos" class="bcLink1" press=".onNavBack" />
           </m:Breadcrumbs>
         </breadcrumbs>
@@ -48,7 +48,7 @@
         <m:HBox id="hcHBox0">
           <sap.ui.core:Icon xmlns:sap.ui.core="sap.ui.core" src="sap-icon://product" size="3.5em" id="icon2" class="icon2" />
           <m:VBox id="hcVBox0" class="sapSmallMarginEnd">
-            <m:Title id="hcTitle0" class="hcTitle0 sapUiSmallMarginEnd" text="{Productid}" />
+            <m:Title id="hcTitle0" class="hcTitle0 sapUiSmallMarginEnd" text="{Userid}" />
             <m:Link id="hcLink0" class="hcLink0 sapUiSmallMarginEnd" text="{i18n>headerCategory}" />
             <m:HBox id="hcHBox1" renderType="Bare">
               <m:Label id="hcLabel0" text="{i18n>headerGrupo}" class="hcLabel0" />
